@@ -28,7 +28,7 @@
 
 ##### - A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/tTMAGB7x/tunerhub).
 
-##### - The project itself was deployed and can be viewed [here](https://github.com/Arkeda221/TunerHub)
+##### - The project itself was deployed and can be viewed (TBD)
 
 ---
 
