@@ -24,7 +24,18 @@ const getCarById = async (req, res) => {
   }
 }
 
+const createCar = async (req, res) => {
+  try {
+    const cars = await new Cars(req.body)
+    await cars.save()
+    return res.status(201).json({ cars })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getAllCars,
-  getCarById
+  getCarById,
+  createCar
 }
