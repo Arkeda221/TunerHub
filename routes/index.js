@@ -13,7 +13,7 @@ router.post('/cars', carControllers.createCar)
 //Comment Routes
 router.get('/comments', commentControllers.getAllComments)
 router.create('/comments', commnetControllers.createComment)
-router.put('/comments', commnetControllers.updateComment)
-router.delete('/comments', commentControllers.deleteComment)
+router.put('/comments/:id', commnetControllers.updateComment)
+router.delete('/comments/:id', commentControllers.deleteComment)
 
 module.exports = router
