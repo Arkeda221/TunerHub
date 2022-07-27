@@ -7,7 +7,7 @@ router.get('/', (req, res) => res.send('This is the root'))
 
 //Car Routes
 router.get('/cars', carControllers.getAllCars)
-router.get('/cars/:id', carControllers.getCarById)
+// router.get('/cars/:id', carControllers.getCarById)
 router.post('/cars', carControllers.createCar)
 
 //Comment Routes

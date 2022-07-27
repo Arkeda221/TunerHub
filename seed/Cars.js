@@ -34,7 +34,7 @@ const main = async () => {
       image: 'https://i.imgur.com/hlykFMv.jpg',
       make: 'Nissan',
       model: 'R34 GT-R',
-      owner: '@pbrianoconner'
+      owner: '@brianoconner'
     }
   ]
 
