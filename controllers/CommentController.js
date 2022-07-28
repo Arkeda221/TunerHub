@@ -12,9 +12,9 @@ const getAllComments = async (req, res) => {
 const getCommentById = async (req, res) => {
   try {
     const { id } = req.params
-    const cars = await Comments.findById(id)
-    if (cars) {
-      return res.status(200).json({ Comments })
+    const comments = await Comments.findById(id)
+    if (comments) {
+      return res.status(200).json({ comments })
     }
     return res
       .status(404)

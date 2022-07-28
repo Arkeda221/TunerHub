@@ -1,35 +1,35 @@
-// import { useEffect, useState } from 'react'
-// import axios from 'axios'
-// import { useParams } from 'react-router-dom'
-// import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-// const Commments = () => {
+const Commments = () => {
 
-//   const [comment, setComment] = useState([])
+  const [comment, setComment] = useState([])
 
-//   let {id} = useParams()
+  let {id} = useParams()
 
-//   useEffect(() => {
-//     const getComments = async () => {
-//       const res = await axios.get(`http://localhost:3001/api/comments/${id}`)
-//       setComment(res.data)
-//       console.log(res.data)
-//     }
-//     getComments()
-//   }, [id])
+  useEffect(() => {
+    const getComments = async () => {
+      const res = await axios.get(`http://localhost:3001/api/comments/${id}`)
+      setComment(res.data.comments)
+      console.log(res)
+    }
+    getComments()
+  }, [id])
 
-//   return (
-//     <div className="Comment-Component">
+  return (
+    <div className="Comment-Component">
             
-//             <h3>{comment.body}
-//             {/* <button onClick={()=> deleteComment()}>delete</button> */}
-//                       <button>update</button></h3>
-//     </div>  
-//     )
+            <h3>{comment.body}
+            {/* <button onClick={()=> deleteComment()}>delete</button> */}
+                      <button>update</button></h3>
+    </div>  
+    )
 
-// }
+}
 
-// export default Commments
+export default Commments
 
 
 

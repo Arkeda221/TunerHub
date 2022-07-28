@@ -20,7 +20,7 @@ const CarDetails = () => {
 
   useEffect(() => {
     const getCar = async () => {
-      let res = await axios.get(`http://localhost:3001/api/cars/${id}`)
+      let res = await axios.get(`http://localhost:3001/api/cars/:${id}`)
       setCar(res.data.cars)
     }
     getCar()
