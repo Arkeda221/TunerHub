@@ -7,7 +7,10 @@ const Commments = () => {
 
   const [comment, setComment] = useState([])
 
+  const [comments, setComments] = useState([])
+
   let {id} = useParams()
+  let navigate = useNavigate()
 
   useEffect(() => {
     const getComments = async () => {
@@ -18,11 +21,18 @@ const Commments = () => {
     getComments()
   }, [id])
 
+
+  const deleteComment = async () => {
+    let res = await axios.delete(`http://localhost:3001/api/comments/${id}`)
+    setComments(res.data.body)
+    navigate('/')
+  }
+
   return (
     <div className="Comment-Component">
             
             <h3>{comment.body}
-            {/* <button onClick={()=> deleteComment()}>delete</button> */}
+            <button onClick={()=> deleteComment()}>delete</button>
                       <button>update</button></h3>
     </div>  
     )
