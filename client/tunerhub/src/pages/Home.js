@@ -23,10 +23,6 @@ const Home = (props) => {
             key={post.id}
           >
             <img src={post.image} alt={post.name} />
-            <h3>{post.make}</h3>
-            <h3>{post.model}</h3>
-            <h3>{post.owner}</h3>
-            <h3>Comments</h3>
           </div>
         ))}
       </div>
