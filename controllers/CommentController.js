@@ -36,23 +36,12 @@ const createComment = async (req, res) => {
 
 const updateComment = async (req, res) => {
   try {
-    const { id } = req.params
-    await Comments.findByIdAndUpdate(
-      id,
-      req.body,
-      { new: true },
-      (err, comments) => {
-        if (err) {
-          res.status(500).send(err)
-        }
-        if (!comments) {
-          res.status(500).send('Comment was not found!')
-        }
-        return res.status(200).json(comments)
-      }
-    )
+    const comment = await Comments.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(comment)
   } catch (error) {
-    return res.status(500).send(error.message)
+    return res.status(500).json({ error: error.message })
   }
 }
 
@@ -76,3 +65,25 @@ module.exports = {
   updateComment,
   getCommentById
 }
+
+// const updateComment = async (req, res) => {
+//   try {
+//     const { id } = req.params
+//     await Comments.findByIdAndUpdate(
+//       id,
+//       req.body,
+//       { new: true },
+//       (err, comments) => {
+//         if (err) {
+//           res.status(500).send(err)
+//         }
+//         if (!comments) {
+//           res.status(500).send('Comment was not found!')
+//         }
+//         return res.status(200).json(comments)
+//       }
+//     )
+//   } catch (error) {
+//     return res.status(500).send(error.message)
+//   }
+// }
