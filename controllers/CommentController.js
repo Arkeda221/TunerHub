@@ -48,7 +48,7 @@ const updateComment = async (req, res) => {
         if (!comments) {
           res.status(500).send('Comment was not found!')
         }
-        return res.status(200).json(comment)
+        return res.status(200).json(comments)
       }
     )
   } catch (error) {

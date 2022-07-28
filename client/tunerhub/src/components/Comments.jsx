@@ -5,13 +5,17 @@ import { useNavigate } from 'react-router-dom'
 
 const Commments = () => {
 
+  const initialState = {
+    body: ''
+  }
   const [comment, setComment] = useState([])
+  const [updateComment, setUpdateComment] = useState(initialState)
 
-  const [comments, setComments] = useState([])
 
   let {id} = useParams()
   let navigate = useNavigate()
 
+  //Get all comments associated with the car post
   useEffect(() => {
     const getComments = async () => {
       const res = await axios.get(`http://localhost:3001/api/comments/${id}`)
@@ -21,38 +25,48 @@ const Commments = () => {
     getComments()
   }, [id])
 
+  //Update Comment 
+  const handleChange = (event) => {
+    setUpdateComment({ ...updateComment, [event.target.id]: event.target.value })
+  }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+   let res = await axios.put(`http://localhost:3001/api/comments/${id}`, updateComment)
+    setUpdateComment(res.data.comments)
+    navigate(-1)
+  }
+
+  //Delete Comment
   const deleteComment = async () => {
-    let res = await axios.delete(`http://localhost:3001/api/comments/${id}`)
-    setComments(res.data.body)
+     await axios.delete(`http://localhost:3001/api/comments/${id}`)
     navigate(-1)
   }
 
   return (
+
     <div className="Comment-Component">
-            
-            <h3>{comment.body}
-            <button onClick={()=> deleteComment()}>delete</button>
-                      <button>update</button></h3>
-    </div>  
+      
+        <h3>{comment.body}
+        <button onClick={()=> deleteComment()}>delete</button>
+        </h3>
+        <form onSubmit={handleSubmit}>
+          <input
+            id="body"
+            type="text"
+            value={updateComment.body}
+            onChange={handleChange}
+            name={'comment'}
+            placeholder={'Update Comment'}
+          />
+           <button>update</button>
+        </form>
+        </div> 
+        
+    
     )
 
 }
 
 export default Commments
 
-
-
-
-
-// //  <form onSubmit={handleCommentSubmit} > 
-// //                   <input
-// //                     id="body"
-// //                     type="text"
-// //                     value={comments.body}
-// //                     onChange={handleCommentChange}
-// //                     name={'comment'}
-// //                     placeholder={'Leave a Comment'}
-// //                   /> 
-// //                    <button>Comment</button>
-// //                 </form >
