@@ -1,4 +1,3 @@
-import Cars from '../components/Cars'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
