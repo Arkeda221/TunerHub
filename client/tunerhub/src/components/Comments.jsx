@@ -25,7 +25,7 @@ const Commments = () => {
   const deleteComment = async () => {
     let res = await axios.delete(`http://localhost:3001/api/comments/${id}`)
     setComments(res.data.body)
-    navigate('/')
+    navigate(-1)
   }
 
   return (
