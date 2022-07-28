@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const CarDetails = () => {
   const [car, setCar] = useState('')
@@ -15,6 +16,8 @@ const CarDetails = () => {
 
   let { id } = useParams()
 
+  let navigate = useNavigate()
+
   useEffect(() => {
     const getCar = async () => {
       let res = await axios.get(`http://localhost:3001/api/cars/${id}`)
@@ -26,11 +29,13 @@ const CarDetails = () => {
   useEffect(() => {
     const getComments = async () => {
       const res = await axios.get('http://localhost:3001/api/comments')
-
       setComments(res.data)
     }
     getComments()
   }, [])
+
+  //filter
+  const carComments = comments.filter((comment) => comment.car_id === id)
 
   const handleCommentChange = (event) => {
     setCommentFormState({
@@ -47,6 +52,11 @@ const CarDetails = () => {
       commentFormState
     )
     setCommentFormState(initialCommentState)
+  }
+
+  const viewComments = async (id) => {
+    let res = await axios.get(`http://localhost:3001/api/comments/${id}`)
+    navigate(`/comments/${id}`)
   }
 
   return (
@@ -71,10 +81,18 @@ const CarDetails = () => {
         </form>
       </div>
       <div className="comment-body">
-        {comments.map((comment, index) => (
+        {carComments.map((comment, index) => (
           <div key={index}>
             <div className="comments">
-              <h3>{comment.body}</h3>
+              <h3>
+                {comment.body}
+                <button
+                  className="Edit-button"
+                  onClick={() => viewComments(comment._id)}
+                >
+                  Edit
+                </button>
+              </h3>
             </div>
           </div>
         ))}
