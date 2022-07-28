@@ -7,8 +7,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Cars from './components/Cars'
-
-// import About from './pages/About'
+import CarDetails from './pages/CarDetails'
 
 function App() {
   const [cars, setCars] = useState([])
@@ -51,7 +50,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home cars={cars} />}></Route>
+          <Route path="/" element={<Home cars={cars} />} />
           <Route
             path="/createpost"
             element={
@@ -60,10 +59,9 @@ function App() {
                 handleSubmit={handleSubmit}
               />
             }
-          ></Route>
-          <Route path="/comments/:id" element={<Cars />}></Route>
-
-          {/* <Route path="/about" element={<About />}></Route> */}
+          />
+          <Route path="/comments/:id" element={<Cars />} />
+          <Route path="/cars/:id" element={<CarDetails />} />
         </Routes>
       </main>
     </div>

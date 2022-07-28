@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Comments from '../components/Comments'
+
 
 
 const Cars = (props) => {
@@ -34,9 +36,7 @@ const handleCommentChange = (event) => {
 const handleCommentSubmit = async (event) => {
   event.preventDefault()
   let res = await axios.post(
-    `http://localhost:3001/api/comments/`,
-    commentFormState
-  )
+    `http://localhost:3001/api/comments/`, commentFormState)
   setCommentFormState(initialCommentState)
 }
 
@@ -65,6 +65,14 @@ const viewComments = async (id) => {
                 <h3>{props.make}</h3>
                 <h3>{props.model}</h3>
                 <h3>{props.owner}</h3>
+                <h3>Comments</h3>
+                <div className='comments'>
+                  {/* {comments.map((comment, index) => (
+                   <Comments 
+                    body={comment.body}
+                   />
+                  ))} */}
+                </div>
                 <form onSubmit={handleCommentSubmit} >
                   <input
                     id="body"
@@ -81,11 +89,11 @@ const viewComments = async (id) => {
                     <div className="comments">
                       <h3>{comment.body} 
                       <button onClick={() => viewComments(comment._id)}>view</button>
-                      {/* <button onClick={()=> deleteComment()}>delete</button>
-                      <button>update</button> */}
+                      <button onClick={()=> deleteComment()}>delete</button>
+                      <button>update</button>
                       </h3>
                     </div>
-                  </div>
+                 </div>
                 ))}
                 
               </div>
