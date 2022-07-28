@@ -53,6 +53,7 @@ const CarDetails = () => {
       commentFormState
     )
     setCommentFormState(initialCommentState)
+    window.location.reload()
   }
 
   const viewComments = async (id) => {
