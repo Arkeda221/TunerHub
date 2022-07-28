@@ -35,7 +35,8 @@ const CarDetails = () => {
   const handleCommentChange = (event) => {
     setCommentFormState({
       ...commentFormState,
-      [event.target.id]: event.target.value
+      [event.target.id]: event.target.value,
+      car_id: id
     })
   }
 
