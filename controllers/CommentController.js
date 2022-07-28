@@ -9,6 +9,21 @@ const getAllComments = async (req, res) => {
   }
 }
 
+const getCommentById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const cars = await Comments.findById(id)
+    if (cars) {
+      return res.status(200).json({ Comments })
+    }
+    return res
+      .status(404)
+      .send('Try a different Input. The one you have tried does not exist.')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const createComment = async (req, res) => {
   try {
     const comments = await new Comments(req.body)
@@ -58,5 +73,6 @@ module.exports = {
   getAllComments,
   createComment,
   deleteComment,
-  updateComment
+  updateComment,
+  getCommentById
 }
