@@ -8,6 +8,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Comments from './components/Comments'
 import CarDetails from './pages/CarDetails'
+require('dotenv').config()
 
 function App() {
   const [cars, setCars] = useState([])
@@ -23,7 +24,7 @@ function App() {
   // Get All Cars
   useEffect(() => {
     const getCars = async () => {
-      const res = await axios.get('http://localhost:3001/api/cars')
+      const res = await axios.get(`${process.env.URL}cars`)
       setCars(res.data)
     }
     getCars()
@@ -38,7 +39,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post('http://localhost:3001/api/cars', formState)
+    let res = await axios.post(`${process.env.URL}cars`, formState)
     setFormState(initialState)
     navigate('/')
   }

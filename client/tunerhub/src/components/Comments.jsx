@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+require('dotenv').config()
 
 const Commments = () => {
 
@@ -18,7 +19,7 @@ const Commments = () => {
   //Get all comments associated with the car post
   useEffect(() => {
     const getComments = async () => {
-      const res = await axios.get(`http://localhost:3001/api/comments/${id}`)
+      const res = await axios.get(`${process.env.URL}comments/${id}`)
       setComment(res.data.comments)
       console.log(res)
     }
@@ -32,14 +33,14 @@ const Commments = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-   let res = await axios.put(`http://localhost:3001/api/comments/${id}`, updateComment)
+   let res = await axios.put(`${process.env.URL}comments/${id}`, updateComment)
     setUpdateComment(res.data.comments)
     navigate(-1)
   }
 
   //Delete Comment
   const deleteComment = async () => {
-     await axios.delete(`http://localhost:3001/api/comments/${id}`)
+     await axios.delete(`${process.env.URL}comments/${id}`)
     navigate(-1)
   }
 

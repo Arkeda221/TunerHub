@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+require('dotenv').config()
 
 const Home = (props) => {
   let navigate = useNavigate()
 
   const showCar = async (id) => {
-    let res = await axios.get(`http://localhost:3001/api/cars/${id}`)
+    let res = await axios.get(`${process.env.URL}cars/${id}`)
     navigate(`/cars/${id}`)
   }
 
