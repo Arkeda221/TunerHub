@@ -35,7 +35,7 @@ const Commments = () => {
     event.preventDefault()
    let res = await axios.put(`http://localhost:3001/api/comments/${id}`, updateComment)
     setUpdateComment(res.data.comments)
-    navigate(-1)
+    window.location.reload()
   }
 
   //Delete Comment
@@ -62,6 +62,7 @@ const Commments = () => {
           />
            <button>update</button>
         </form>
+         <button onClick={()=> navigate(-1)}>back</button>
         </div> 
         
     

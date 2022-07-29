@@ -28,6 +28,7 @@ function App() {
       const res = await axios.get(`http://localhost:3001/api/cars`)
       setCars(res.data)
     }
+
     getCars()
   }, [])
 
@@ -43,6 +44,7 @@ function App() {
     let res = await axios.post(`http://localhost:3001/api/cars`, formState)
     setFormState(initialState)
     navigate('/')
+    window.location.reload()
   }
 
   return (
