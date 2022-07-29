@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-require('dotenv').config()
+// require('dotenv').config()
 
 const Commments = () => {
 
@@ -19,7 +19,7 @@ const Commments = () => {
   //Get all comments associated with the car post
   useEffect(() => {
     const getComments = async () => {
-      const res = await axios.get(`${process.env.URL}comments/${id}`)
+      const res = await axios.get(`http://localhost:3001/api/comments/${id}`)
       setComment(res.data.comments)
       console.log(res)
     }
