@@ -18,15 +18,16 @@ const CarDetails = () => {
 
   let navigate = useNavigate()
 
+  //Get Car by Id
   useEffect(() => {
     const getCar = async () => {
       let res = await axios.get(`http://localhost:3001/api/cars/${id}`)
       setCar(res.data.cars)
-      console.log(res.data.cars)
     }
     getCar()
   }, [id])
 
+  //Get all comments associated with Car id
   useEffect(() => {
     const getComments = async () => {
       const res = await axios.get('http://localhost:3001/api/comments')
@@ -56,6 +57,7 @@ const CarDetails = () => {
     window.location.reload()
   }
 
+  //View Comment
   const viewComments = async (id) => {
     let res = await axios.get(`http://localhost:3001/api/comments/${id}`)
     navigate(`/comments/${id}`)
