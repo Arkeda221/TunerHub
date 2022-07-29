@@ -8,6 +8,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Comments from './components/Comments'
 import CarDetails from './pages/CarDetails'
+import About from './pages/About'
 // require('dotenv').config()
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
           />
           <Route path="/comments/:id" element={<Comments />} />
           <Route path="/cars/:id" element={<CarDetails />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
     </div>

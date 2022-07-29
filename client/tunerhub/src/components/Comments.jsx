@@ -33,14 +33,14 @@ const Commments = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-   let res = await axios.put(`${process.env.URL}comments/${id}`, updateComment)
+   let res = await axios.put(`http://localhost:3001/api/comments/${id}`, updateComment)
     setUpdateComment(res.data.comments)
     navigate(-1)
   }
 
   //Delete Comment
   const deleteComment = async () => {
-     await axios.delete(`${process.env.URL}comments/${id}`)
+     await axios.delete(`http://localhost:3001/api/comments/${id}`)
     navigate(-1)
   }
 
