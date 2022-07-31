@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+
 // require('dotenv').config()
 
 const Commments = () => {
@@ -47,11 +48,11 @@ const Commments = () => {
   return (
 
     <div className="Comment-Component">
-      
+        <h2>Modify Your Comment Below:</h2>
         <h3>{comment.body}
-        <button onClick={()=> deleteComment()}>delete</button>
+        <button className='delete-button' onClick={()=> deleteComment()}>delete</button>
         </h3>
-        <form onSubmit={handleSubmit}>
+        <form className='update-form' onSubmit={handleSubmit}>
           <input
             id="body"
             type="text"
@@ -60,9 +61,9 @@ const Commments = () => {
             name={'comment'}
             placeholder={'Update Comment'}
           />
-           <button>update</button>
+           <button className='update-button'>update</button>
         </form>
-         <button onClick={()=> navigate(-1)}>back</button>
+         <button className='back-button' onClick={()=> navigate(-1)}>back</button>
         </div> 
         
     

@@ -1,41 +1,45 @@
 const CreatePost = (props) => {
   return (
-    <div>
+    <div className="create-post-page">
       <h1>Add a new Post</h1>
-      <form onSubmit={props.handleSubmit}>
+      <form className="create-form" onSubmit={props.handleSubmit}>
         <input
+          className="create-input"
           id="image"
           type="text"
           value={props.image}
           onChange={props.handleChange}
           name={'img'}
-          placeholder={'image link'}
+          placeholder={'Image Link'}
         />
         <input
+          className="create-input"
           id="make"
           type="text"
           value={props.make}
           onChange={props.handleChange}
           name={'make'}
-          placeholder={'make'}
+          placeholder={'Make'}
         />
         <input
+          className="create-input"
           id="model"
           type="text"
           value={props.model}
           onChange={props.handleChange}
           name={'model'}
-          placeholder={'model'}
+          placeholder={'Model'}
         />
         <input
+          className="create-input"
           id="owner"
           type="text"
           value={props.owner}
           onChange={props.handleChange}
           name={'owner'}
-          placeholder={'owner'}
+          placeholder={'Owner'}
         />
-        <button>Submit</button>
+        <button className="submit-button">Submit</button>
       </form>
     </div>
   )

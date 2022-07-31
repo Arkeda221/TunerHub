@@ -79,7 +79,7 @@ const CarDetails = () => {
               value={comments.body}
               onChange={handleCommentChange}
               name={'comment'}
-              placeholder={'Leave a Comment'}
+              placeholder={'Leave a Comment : Ex. "nice car! -@alex"'}
             />
             <button className="commment-button">Comment</button>
           </form>

@@ -4,9 +4,11 @@ const About = () => {
       <h1>About:</h1>
       <p>
         This application was created for a project during my software
-        engineering immersive class at General Assembly. The purpose of this
-        application is to display posts of your favorite tuned cars and be able
-        to leave comments on these posts. Please be respectful in the comments.
+        engineering immersive class at General Assembly. This applications is
+        called 'TunerHub', and was developed using the full MERN stack. The
+        purpose of TunerHub is for car enthusiasts to be able to share their
+        cars, and leave comments on other enthusiast's posts. Please be
+        respectful in the comment section.
       </p>
     </div>
   )
