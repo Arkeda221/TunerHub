@@ -7,31 +7,31 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
   const cars = [
     {
-      image: 'https://i.imgur.com/KDC6C24.jpg',
+      image: 'https://i.imgur.com/FHacSMl.png',
       make: 'Nissan',
       model: '370z',
       owner: '@alex_z34'
     },
     {
-      image: 'https://i.imgur.com/xMf3s4V.jpg',
+      image: 'https://i.imgur.com/baV9UmZ.png',
       make: 'Nissan',
       model: 'Cima Y32',
       owner: '@piotr.192'
     },
     {
-      image: 'https://i.imgur.com/xujNH3g.jpg',
+      image: 'https://i.imgur.com/hVWJSfc.png',
       make: 'Nissan',
       model: '370z',
       owner: '@piotr.192'
     },
     {
-      image: 'https://i.imgur.com/gCuJ4gc.jpg',
-      make: 'Mazada',
-      model: 'Miata',
-      owner: '@pimmatchstick'
+      image: 'https://i.imgur.com/BhkPyJM.png',
+      make: 'Honda',
+      model: 'S2000',
+      owner: '@fuzzy_s2k'
     },
     {
-      image: 'https://i.imgur.com/hlykFMv.jpg',
+      image: 'https://i.imgur.com/V2VGuLS.png',
       make: 'Nissan',
       model: 'R34 GT-R',
       owner: '@brianoconner'

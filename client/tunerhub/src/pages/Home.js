@@ -11,10 +11,8 @@ const Home = (props) => {
   }
 
   return (
-    <div className="main">
-      <div className="title">
-        <h1>Car Posts</h1>
-      </div>
+    <div className="home_page">
+      <div className="title"></div>
       <div className="cars">
         {props.cars.map((post) => (
           <div

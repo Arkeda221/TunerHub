@@ -65,42 +65,43 @@ const CarDetails = () => {
   }
 
   return (
-    <div className="car-post">
+    <div className="details_page">
       <div className="car-details">
-        <img src={car.image} alt={car.name} />
+        <img className="detail-image" src={car.image} alt={car.name} />
         <h3>Make: {car.make}</h3>
         <h3>Model: {car.model}</h3>
         <h3>Owner: {car.owner}</h3>
-      </div>
-      <div className="comments-form">
-        <form onSubmit={handleCommentSubmit}>
-          <input
-            id="body"
-            type="text"
-            value={comments.body}
-            onChange={handleCommentChange}
-            name={'comment'}
-            placeholder={'Leave a Comment'}
-          />
-          <button>Comment</button>
-        </form>
-      </div>
-      <div className="comment-body">
-        {carComments.map((comment, index) => (
-          <div key={index}>
-            <div className="comments">
-              <h3>
-                {comment.body}
-                <button
-                  className="Edit-button"
-                  onClick={() => viewComments(comment._id)}
-                >
-                  Edit
-                </button>
-              </h3>
+        <div className="comments-form">
+          <form className="comment-form" onSubmit={handleCommentSubmit}>
+            <input
+              id="body"
+              type="text"
+              value={comments.body}
+              onChange={handleCommentChange}
+              name={'comment'}
+              placeholder={'Leave a Comment'}
+            />
+            <button className="commment-button">Comment</button>
+          </form>
+        </div>
+        <h3>Comments:</h3>
+        <div className="comment-body">
+          {carComments.map((comment, index) => (
+            <div key={index}>
+              <div className="comments">
+                <h3 className="comment">
+                  {comment.body}
+                  <button
+                    className="Edit-button"
+                    onClick={() => viewComments(comment._id)}
+                  >
+                    Edit
+                  </button>
+                </h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )
