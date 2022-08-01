@@ -81,7 +81,8 @@ margin-top: 68px;
   background-position: center;
   background-attachment: fixed;
   font-size: 1.35rem;
-  text-shadow: rgb(240, 240, 240) 0px 0px 2px;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 0px 0px 2px;
 }
 
 
@@ -134,6 +135,8 @@ margin-top: 68px;
 
 .Comment-Component{
   padding-top: 300px;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 0px 0px 2px;
   
   
 }
@@ -193,7 +196,9 @@ margin-top: 68px;
 
 .create-post-page{
   margin-top: 100px;
-  text-shadow: rgb(255, 255, 255) 0px 0px 2px;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 0px 0px 2px,
+  black 2px 2px 2px;;
 }
 .create-form{
   background-color: rgb(197, 197, 197);
@@ -233,7 +238,9 @@ margin-top: 68px;
 }
 
 .About h1{
-  text-shadow: rgb(255, 255, 255) 0px 0px 2px;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 0px 0px 2px,
+                  black 2px 2px 2px;
   font-size: 2.5em;
 }
 
