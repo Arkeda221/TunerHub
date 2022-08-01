@@ -50,11 +50,9 @@
 
 ![Home](https://i.imgur.com/yk4UVRz.png)
 
-##### Post Page
+##### Car Details/Comments
 
-TBD
-
-#### Create Post Page
+![Details/Comments](https://i.imgur.com/kZIQJNS.png)
 
 ---
 
