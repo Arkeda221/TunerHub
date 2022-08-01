@@ -10,7 +10,7 @@
 
 ### **_Description_**
 
-#### TunerHub is a free socail networking appilcation built for the car enthusiast. Car enthusiasts can upload photos of their cars and share them with the car community around the world. They can also update, and delete their posts should they require the need to.
+#### TunerHub is a free socail networking appilcation built for the car enthusiast. Car enthusiasts can upload photos of their cars and share them with the car community around the world. Users can also leave comments on all of the posts, as well as edit and delete their comments.
 
 ---
 
@@ -34,13 +34,13 @@
 
 ### **_ERD_**
 
-![ERD](https://i.imgur.com/4M9uSN8.png)
+![ERD](https://i.imgur.com/WBvMtLZ.png)
 
 ---
 
 ### **_Component Heirarchy Diagram_**
 
-![CHD](https://i.imgur.com/N8Pzqdb.png)
+![CHD](https://i.imgur.com/LpPUUdy.png)
 
 ---
 
