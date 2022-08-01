@@ -46,9 +46,9 @@
 
 ### **_Screenshots_**
 
-##### Welcome page page
+##### Home Page
 
-TBD
+![Home](https://i.imgur.com/yk4UVRz.png)
 
 ##### Post Page
 
