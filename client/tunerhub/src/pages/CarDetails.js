@@ -16,7 +16,7 @@ const CarDetails = () => {
   const [commentFormState, setCommentFormState] = useState(initialCommentState)
 
   let { id } = useParams()
-
+  console.log(id)
   let navigate = useNavigate()
 
   //Get Car by Id
