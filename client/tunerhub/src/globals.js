@@ -1,5 +1,5 @@
-const BASE_URL = 'https://still-badlands-36364.herokuapp.com/'
+const BASE_URL = 'https://still-badlands-36364.herokuapp.com'
 
-module.exports = {
+export default {
   BASE_URL
 }

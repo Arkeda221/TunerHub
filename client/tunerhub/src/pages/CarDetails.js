@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BASE_URL } from './globals'
+// import { BASE_URL } from './globals'
 // require('dotenv').config()
 
 const CarDetails = () => {
@@ -23,7 +23,7 @@ const CarDetails = () => {
   //Get Car by Id
   useEffect(() => {
     const getCar = async () => {
-      let res = await axios.get(`${BASE_URL}/api/cars/${id}`)
+      let res = await axios.get(`http://localhost:3001/api/cars/${id}`)
       setCar(res.data.cars)
     }
     getCar()
@@ -32,7 +32,7 @@ const CarDetails = () => {
   //Get all comments associated with Car id
   useEffect(() => {
     const getComments = async () => {
-      const res = await axios.get(`${BASE_URL}/api/comments`)
+      const res = await axios.get(`http://localhost:3001/api/comments`)
       setComments(res.data)
     }
     getComments()
@@ -51,14 +51,17 @@ const CarDetails = () => {
 
   const handleCommentSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post(`${BASE_URL}/api/comments/`, commentFormState)
+    let res = await axios.post(
+      `http://localhost:3001/api/comments/`,
+      commentFormState
+    )
     setCommentFormState(initialCommentState)
     window.location.reload()
   }
 
   //View Comment
   const viewComments = async (id) => {
-    let res = await axios.get(`${BASE_URL}/api/comments/${id}`)
+    let res = await axios.get(`http://localhost:3001/api/comments/${id}`)
     navigate(`/comments/${id}`)
   }
 

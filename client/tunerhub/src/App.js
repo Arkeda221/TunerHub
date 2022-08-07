@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import Comments from './components/Comments'
 import CarDetails from './pages/CarDetails'
 import About from './pages/About'
-import { BASE_URL } from './globals'
+// import { BASE_URL } from './globals'
 // require('dotenv').config()
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
   // Get All Cars
   useEffect(() => {
     const getCars = async () => {
-      const res = await axios.get(`${BASE_URL}/api/cars`)
+      const res = await axios.get(`http://localhost:3001/api/cars`)
       setCars(res.data)
     }
 
@@ -42,7 +42,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post(`${BASE_URL}/api/cars`, formState)
+    let res = await axios.post(`http://localhost:3001/api/cars`, formState)
     setFormState(initialState)
     navigate('/')
     window.location.reload()
