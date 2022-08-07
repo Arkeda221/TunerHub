@@ -15,6 +15,7 @@ const Commments = () => {
 
 
   let {id} = useParams()
+  console.log(id)
   let navigate = useNavigate()
 
   //Get all comments associated with the car post
