@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-
+import { BASE_URL } from './globals' 
 // require('dotenv').config()
 
 const Commments = () => {
@@ -35,14 +35,14 @@ const Commments = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-   let res = await axios.put(`http://localhost:3001/api/comments/${id}`, updateComment)
+   let res = await axios.put(`${BASE_URL}/api/comments/${id}`, updateComment)
     setUpdateComment(res.data.comments)
     window.location.reload()
   }
 
   //Delete Comment
   const deleteComment = async () => {
-     await axios.delete(`http://localhost:3001/api/comments/${id}`)
+     await axios.delete(`${BASE_URL}/api/comments/${id}`)
     navigate(-1)
   }
 

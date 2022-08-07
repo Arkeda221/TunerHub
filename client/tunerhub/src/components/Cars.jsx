@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Comments from '../components/Comments'
-
+import { BASE_URL } from './globals'
 
 
 const Cars = (props) => {
@@ -19,7 +19,7 @@ const [commentFormState, setCommentFormState] = useState(initialCommentState)
 
 useEffect(() => {
   const getComments = async () => {
-    const res = await axios.get('http://localhost:3001/api/comments')
+    const res = await axios.get(`${BASE_URL}/api/comments`)
    
     setComments(res.data)
   }
@@ -36,7 +36,7 @@ const handleCommentChange = (event) => {
 const handleCommentSubmit = async (event) => {
   event.preventDefault()
   let res = await axios.post(
-    `http://localhost:3001/api/comments/`, commentFormState)
+    `${BASE_URL}/api/comments/`, commentFormState)
   setCommentFormState(initialCommentState)
 }
 
@@ -45,13 +45,13 @@ const handleCommentSubmit = async (event) => {
 
 
 const deleteComment = async () => {
-  let res = await axios.delete(`http://localhost:3001/api/comments/${id}`)
+  let res = await axios.delete(`${BASE_URL}/api/comments/${id}`)
   setComments(res.data.body)
   navigate('/')
 }
 
 const viewComments = async (id) => {
-  let res = await axios.get(`http://localhost:3001/api/comments/${id}`)
+  let res = await axios.get(`${BASE_URL}/api/comments/${id}`)
   navigate(`/comments/${id}`)
 }
 

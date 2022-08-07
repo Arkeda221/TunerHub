@@ -12,7 +12,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(logger('dev'))
-app.use(express.static(`${__dirname}/client/build`))
+app.use(express.static(`${__dirname}/client/tunerhub/build`))
 
 app.use('/api', routes)
 
