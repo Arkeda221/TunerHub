@@ -41,6 +41,7 @@ const CarDetails = () => {
   //filter
   const carComments = comments.filter((comment) => comment.car_id === id)
 
+  //leave a comment
   const handleCommentChange = (event) => {
     setCommentFormState({
       ...commentFormState,
