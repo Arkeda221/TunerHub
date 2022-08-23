@@ -10,7 +10,6 @@ import Comments from './components/Comments'
 import CarDetails from './pages/CarDetails'
 import About from './pages/About'
 import { BASE_URL } from './globals'
-// require('dotenv').config()
 
 function App() {
   const [cars, setCars] = useState([])
