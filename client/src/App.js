@@ -41,7 +41,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post(`${BASE_URL}cars`, formState)
+    await axios.post(`${BASE_URL}cars`, formState)
     setFormState(initialState)
     navigate('/')
     window.location.reload()

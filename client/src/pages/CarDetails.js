@@ -52,14 +52,14 @@ const CarDetails = () => {
 
   const handleCommentSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post(`${BASE_URL}comments/`, commentFormState)
+    await axios.post(`${BASE_URL}comments/`, commentFormState)
     setCommentFormState(initialCommentState)
     window.location.reload()
   }
 
   //View Comment
   const viewComments = async (id) => {
-    let res = await axios.get(`${BASE_URL}comments/${id}`)
+    await axios.get(`${BASE_URL}comments/${id}`)
     navigate(`/comments/${id}`)
   }
 
