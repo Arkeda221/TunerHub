@@ -34,13 +34,13 @@
 
 ### **_ERD_**
 
-![ERD](https://i.imgur.com/WBvMtLZ.png)
+![ERD](https://i.imgur.com/xDQSeta.png)
 
 ---
 
 ### **_Component Heirarchy Diagram_**
 
-![CHD](https://i.imgur.com/LpPUUdy.png)
+![CHD](https://i.imgur.com/azuJeUC.png)
 
 ---
 
