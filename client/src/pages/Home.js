@@ -7,7 +7,7 @@ const Home = (props) => {
   let navigate = useNavigate()
 
   const showCar = async (id) => {
-    let res = await axios.get(`${BASE_URL}cars/${id}`)
+    await axios.get(`${BASE_URL}cars/${id}`)
     navigate(`/cars/${id}`)
   }
 
